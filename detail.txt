@@ -1,0 +1,118 @@
+Docker is a container management service. The keywords of Docker are develop, ship and
+run anywhere. The whole idea of Docker is for developers to easily develop applications, ship
+them into containers which can then be deployed anywhere. 
+
+Features of Docker
+ Docker has the ability to reduce the size of development by providing a smaller
+footprint of the operating system via containers.
+ With containers, it becomes easier for teams across different units, such as
+development, QA and Operations to work seamlessly across applications.
+ You can deploy Docker containers anywhere, on any physical and virtual machines and
+even on the cloud.
+ Since Docker containers are pretty lightweight, they are very easily scalable.
+
+
+Docker Images:-In Docker, an image is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings. Docker images are the basis from which Docker containers are created.
+
+
+
+mkdir my-flask-app
+cd my-flask-app
+python3 -m venv puggu
+source puggu/bin/activate
+
+
+Create a requirements.txt file:
+
+This file will list the required Python packages. For our Flask app, we need only Flask:
+
+Flask==2.0.1
+
+
+pip install -r requirements.txt
+
+
+Create a Dockerfile in your project directory:
+This Dockerfile will set up a Python environment, install dependencies, and set the command to start your Flask app:
+
+
+Build Your Docker Image:
+
+docker build -t my-flask-app .
+
+Run the Container
+
+docker run -p 4000:5000 my-flask-app
+
+1.docker run:
+Starts a new container from an image.
+Example: docker run -d -p 5000:5000 my-image
+
+2.docker build:
+Builds an image from a Dockerfile.
+Example: docker build -t my-image .
+
+3.docker images:
+Lists all the Docker images on the host.
+Example: docker images
+
+4.docker ps:
+Shows running containers. With -a, it shows all containers (running and stopped).
+Example: docker ps -a
+
+5.docker pull:
+Pulls an image from a registry (like Docker Hub).
+Example: docker pull ubuntu
+
+6.docker push:
+Pushes an image to a registry.
+Example: docker push my-username/my-image
+
+7.docker stop:
+Stops a running container.
+Example: docker stop container_id_or_name
+
+8.docker start:
+Starts a stopped container.
+Example: docker start container_id_or_name
+
+9.docker restart:
+Restarts a container.
+Example: docker restart container_id_or_name
+
+10.docker rm:
+Removes one or more containers.
+Example: docker rm container_id_or_name
+
+11.docker rmi:
+Removes one or more images.
+Example: docker rmi image_id_or_name
+
+13.docker exec:
+Runs a command in a running container.
+Example: docker exec -it container_id_or_name bash
+
+14.docker logs:
+Fetches the logs of a container.
+Example: docker logs container_id_or_name
+
+16.docker inspect:
+Returns detailed information on the container or image.
+Example: docker inspect container_id_or_name
+
+17.docker network:
+Manages Docker networks.
+Example: docker network ls
+
+18.docker volume:
+Manages Docker volumes for persistent data storage.
+Example: docker volume ls
+
+
+19.docker-compose up:
+Builds, (re)creates, starts, and attaches to containers for a service defined in a docker-compose.yml file.
+Example: docker-compose up
+
+20.docker-compose down:
+Stops and removes containers, networks, volumes, and images created by docker-compose up.
+Example: docker-compose down
